@@ -1,2 +1,3 @@
 # small-project
-Some small projects.
+Some small funny games:
+1. guess the secret number.
