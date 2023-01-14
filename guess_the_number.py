@@ -61,6 +61,7 @@ def guess_number_programme():
             start_a_new_game()
             print("-------------------New game ------------------")
         else:
+            # hanle user input not y or n.
             print("Please typo only 'y' or 'n'")
 
 # Let's enjoy the game.
