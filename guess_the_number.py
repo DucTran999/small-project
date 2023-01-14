@@ -46,15 +46,18 @@ def start_a_new_game():
             
 """ The main programme."""
 def guess_number_programme():
-    message = 'I had chosen a secret number in range 1 to 10'
-    message += "\nYou have 3 chances to guess it."
-    print(message)
+    # get the gameplay from file.
+    gameplay_path = 'gameplay/guess_the_number_gameplay.txt'
+    with open(gameplay_path) as file_object:
+        gameplay = file_object.read()
+    print(gameplay)
+    
     while True:
         answer = input("Do you want to play? ('y' : Yes and 'n' : No) ")
         if answer.lower() == 'n':
             print("OK. We can do it another time.")
             sys.exit()
-        elif answer == 'y':
+        elif answer.lower() == 'y':
             start_a_new_game()
             print("-------------------New game ------------------")
         else:
