@@ -1,0 +1,37 @@
+[
+    {
+        "1": "What is a correct syntax to output 'Hello World' in Python?",
+        "A": "echo 'Hello World'",
+        "B": "print('Hello World')",
+        "C": "echo('Hello World')",
+        "Answer": "B"
+    },
+    {
+        "2": "How do you insert COMMENTS in Python code?",
+        "A": "/*This is a comment*/",
+        "B": "//This is a comment",
+        "C": "#This is a comment",
+        "Answer": "C"
+    },
+    {
+        "3": "Which one is NOT a legal variable name?",
+        "A": "_myvar",
+        "B": "Myvar",
+        "C": "my-var",
+        "Answer": "B"
+    },
+    {
+        "4": "How do you create a variable with the numeric value 5?",
+        "A": "x = int(5)",
+        "B": "x = 5",
+        "C": "Both the other answers are correct.",
+        "Answer": "A"
+    },
+    {
+        "5": "What is the correct file extension for Python files?",
+        "A": ".pyth",
+        "B": ".pt",
+        "C": ".py",
+        "Answer": "C"
+    }
+]
