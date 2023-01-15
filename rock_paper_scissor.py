@@ -86,11 +86,17 @@ def consider_final_result(wins, ties, loses):
 """
 def load_game_play():
     # load gameplay from gameplay folder.
-    gameplay_path = 'gameplay/rock_paper_scissor_gameplay.txt'
-    with open(gameplay_path) as file_object:
-        game_play = file_object.read()
-    print(game_play)
-    
+    try:
+        gameplay_path = 'gameplay/rock_paper_scissor_gameplay.txt'
+        with open(gameplay_path) as file_object:
+            game_play = file_object.read()
+    except FileNotFoundError:
+        print("Some problem occured when loading the gameplay!")
+        print('You can find it in gameplay folder.', end=' ')
+        print("Sorry about this inconvenience")
+    else:
+        print(game_play)
+            
 def run_game():
     # Invite player to join the game, if they agree so start the game
     invite_msg = "Do you want to play? (y: 'Yes' or n: 'No') "
