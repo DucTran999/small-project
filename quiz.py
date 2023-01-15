@@ -130,10 +130,13 @@ def confirm_player_ready():
                 print("5s left", end=' ')
                 count_down_timer()
             else:
-                print("OK! 60s more!")
+                print("OK! The last 60s!")
                 sleep(54)
                 print("5s left", end=' ')
                 count_down_timer()
+                print("Quizs will appear after 5 second!")
+                count_down_timer()
+                break
         else:
             print("Please enter one of 4: y, n, yes or no.")
             
