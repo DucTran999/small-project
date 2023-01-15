@@ -47,10 +47,14 @@ def start_a_new_game():
 """ The main programme."""
 def guess_number_programme():
     # get the gameplay from file.
-    gameplay_path = 'gameplay/guess_the_number_gameplay.txt'
-    with open(gameplay_path) as file_object:
-        gameplay = file_object.read()
-    print(gameplay)
+    try:
+        gameplay_path = 'gameplay/guess_the_number_gameplay.txt'
+        with open(gameplay_path) as file_object:
+            gameplay = file_object.read()
+    except FileNotFoundError:
+        print("Some problem occured when loading the gameplay!")
+    else:
+        print(gameplay)
     
     while True:
         answer = input("Do you want to play? ('y' : Yes and 'n' : No) ")
