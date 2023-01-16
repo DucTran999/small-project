@@ -95,6 +95,7 @@ def get_player_choice(topics):
 def start_quiz(player_chosen, topics):
     quizs = load_quiz(player_chosen, topics)
     confirm_player_ready()
+    show_quiz_and_check_player_ans(quizs)
 
 def load_quiz(player_chosen, topics):
     # load all quiz stored in json file
@@ -146,7 +147,68 @@ def count_down_timer():
         print(i, end=' ')
         sleep(1)
     print()
-    
+
+def show_quiz_and_check_player_ans(quizs):
+    key_ans_list = []
+    player_ans_list = []
+    for quiz in quizs:
+        ans_key = get_quiz_content(quiz)
+        key_ans_list.append(ans_key.lower())
+        player_ans = validate_player_ans()
+        player_ans_list.append(player_ans.lower())
+    check_player_ans(key_ans_list, player_ans_list)
+
+def check_player_ans(key_list, ans_list):
+    total_correct = 0
+    for i in range(0, 5):
+        if ans_list[i] != key_list[i]:
+            print(f"Question {i}: Wrong answer!. The answer is {key_list[i]}.")
+        else:
+            print(f"Question {i}: Correct answer!")
+            total_correct += 1
+    show_encourage_message(total_correct)
+
+def show_encourage_message(total_correct):
+    if total_correct == 0:
+        print("Total correct: 0 / 5")
+        print("Don't worry. Failure is mother's success")
+    elif total_correct == 1:
+        print("Total correct: 1 / 5")
+        print("Don't give up. Persistence is key to success.")
+    elif total_correct == 2:
+        print("Total correct: 2 / 5")
+        print("The more you try, the closer you get to success.")
+    elif total_correct == 3:
+        print("Total correct: 3 / 5")
+        print("Good result! Repeat is mothering of learning.")
+    elif total_correct == 4:
+        print("Total correct: 4 / 5")
+        print("Great! You do it almost perfectly.", end=' ')
+        print("I think you really love this field.")  
+    else:
+        print("Total correct: 5 / 5")
+        print("Fantastic! You must be expert in this field.")  
+
+def get_quiz_content(quiz):
+    # print the question part 
+    control_print_info = 0
+    for key, value in quiz.items():
+        if control_print_info == 0:
+            print(f"Question {key}. {value.capitalize()}")
+        elif control_print_info == 4:
+            return value
+        else:
+            print(f"({key}) {value}")
+        control_print_info += 1
+
+def validate_player_ans():
+    while True:
+        player_ans = input("Enter your answer: ").lower()
+        if player_ans != 'a' and player_ans != 'b' and player_ans != 'c':
+            print("Please enter only A, B or C!")
+        else:
+            return player_ans
+        
 def quiz_progame():
     load_gameplay()
     run_game()
