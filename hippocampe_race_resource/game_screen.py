@@ -30,4 +30,29 @@ class Screen:
         banner_2 += "\t\t/_/ |_|\__,_/\___/\___/  \n"
         print(banner, banner_2)
     
+    def draw_map(self,
+                 p1_name, p1_hippo_has, p1_hippo_finished, p1_box,
+                 p2_name, p2_hippo_has, p2_hippo_finished, p2_box):
+        print("#-------------------------------Match-------------------------------#")
+        self.show_player_process(p1_name, p1_hippo_has, p1_box, p1_hippo_finished)
+        print(".___________________________________________________________________.")
+        self.show_player_process(p2_name, p2_hippo_has, p2_box, p2_hippo_finished)
+        print("#-------------------------------------------------------------------#")
     
+    def show_player_process(self, name, hippo_has, box, hippo_finished):
+        print(f"Player: {name}", end='\n')
+        print(f"Has: {hippo_has}")
+        self.draw_race(box)
+        print(f"{name}'s hippo finished race: {hippo_finished}")
+        
+    def draw_race(self, box_classified):
+        special_gift = box_classified[0]
+        danger_box = box_classified[1]
+        for i in range(1, 13):
+            if i in special_gift:
+                print("_?_", end='  ')
+            elif i in danger_box:
+                print("_!_", end='  ')
+            else:
+                print("___", end='  ')
+        print("FINISH\n")
