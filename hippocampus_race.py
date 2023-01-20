@@ -3,7 +3,6 @@ import sys
 from hippocampe_race_resource.game_screen import Screen
 from hippocampe_race_resource.validates import Validate
 from hippocampe_race_resource.settings import Setting
-from hippocampe_race_resource.players import Player
 from hippocampe_race_resource.games import Game
 
 class HippocampusRace:
@@ -12,8 +11,6 @@ class HippocampusRace:
         self.screens = Screen()
         self.validates = Validate()
         self.settings = Setting()
-        self.player1 = Player()
-        self.player2 = Player()
         self.games = Game(self)
 
     def run_game(self):
