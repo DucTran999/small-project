@@ -27,4 +27,14 @@ class Validate:
                 print("Your name is over 20 chars!")
             else:
                 return player_inp.capitalize()
-            
+
+    def validate_hippo_exist(self, order_list):
+        while True:
+            try:
+                player_inp = int(input("Enter hippo order: "))
+                if player_inp in order_list:
+                    return player_inp
+                else:
+                    print("hippo order not valid!")
+            except ValueError:
+                print("Enter number only!")           
