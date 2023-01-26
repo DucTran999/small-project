@@ -16,9 +16,10 @@ class HippocampusRace:
     def run_game(self):
         while True:
             game_mode = self.settings.get_game_mode()
+            print(f"\t\t-------> {game_mode} <-------")
             self.screens.show_menu("game", "Let's play!", "Settings", "Exit")
             self.hanle_player_choice_main_menu(game_mode)
-    
+
     def hanle_player_choice_main_menu(self, game_mode):
         player_choice = self.validates.validate_player_choice()
         if player_choice == 1:

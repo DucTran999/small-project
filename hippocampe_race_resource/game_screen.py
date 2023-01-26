@@ -1,3 +1,5 @@
+from time import sleep
+
 class Screen:
     """class Screen responsible for interacting to player.
 
@@ -29,30 +31,55 @@ class Screen:
         banner_2 += "\t\t / _, _/ /_/ / /__/  __/ \n"
         banner_2 += "\t\t/_/ |_|\__,_/\___/\___/  \n"
         print(banner, banner_2)
+
+
+    def show_player_process(self, p_race):
+        p_name = p_race.get_owner()
+        print(f"Player: {p_name}", end='\n')
+        self.draw_race(p_race)
+        self.show_steps_mark()
+
     
-    def draw_map(self,
-                 p1_name, p1_hippo_has, p1_hippo_finished, p1_box,
-                 p2_name, p2_hippo_has, p2_hippo_finished, p2_box):
-        print("#-------------------------------Match-------------------------------#")
-        self.show_player_process(p1_name, p1_hippo_has, p1_box, p1_hippo_finished)
-        print(".___________________________________________________________________.")
-        self.show_player_process(p2_name, p2_hippo_has, p2_box, p2_hippo_finished)
-        print("#-------------------------------------------------------------------#")
-    
-    def show_player_process(self, name, hippo_has, box, hippo_finished):
-        print(f"Player: {name}", end='\n')
-        print(f"Has: {hippo_has}")
-        self.draw_race(box)
-        print(f"{name}'s hippo finished race: {hippo_finished}")
-        
-    def draw_race(self, box_classified):
-        special_gift = box_classified[0]
-        danger_box = box_classified[1]
-        for i in range(1, 13):
-            if i in special_gift:
-                print("_?_", end='  ')
-            elif i in danger_box:
-                print("_!_", end='  ')
+    def show_deday_create_race(self, p_name):
+        print(f"\tCreating race for {p_name}", end='')
+        for i in range(0, 5):
+            if i < 4:
+                print('.', end='')
+                sleep(0.6)
             else:
-                print("___", end='  ')
-        print("FINISH\n")
+                print()
+
+    def show_deday_result(self):
+        print(f"\tWaiting for last result", end='')
+        for i in range(0, 5):
+            if i < 4:
+                print('.', end='')
+                sleep(0.6)
+            else:
+                print()
+
+    def draw_race(self, p_race):
+        race = ['___'] * 14
+        race[0] = 'START:'
+        race[13] = 'FINISH'
+        for box in p_race.get_boxes():
+            box_pos = box.get_pos()
+            box_type = box.convert_type_to_signal(box.get_type())
+            race[box_pos] = box_type
+        for step in race:
+            print(step, end='  ')
+        print()
+
+
+    def show_steps_mark(self):
+        print("Steps: ", end='  ')
+        for step in range(1, 9):
+            print(step, end='    ')
+        for step in range(9, 13):
+            print(step, end='   ')
+        print()
+
+    
+    def show_hpl(self, hpl):
+        for hp in hpl:
+            print(str(hp))

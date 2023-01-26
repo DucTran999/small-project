@@ -1,7 +1,7 @@
 """ Dice class handles all player dice operations. """
 
-from random import seed, choice, shuffle
-from time import time
+from random import seed, choice, shuffle, randint
+from time import time, sleep
 
 class Dice:
     
@@ -9,26 +9,47 @@ class Dice:
         """ Dice always have 6 sides """
         self.sides = [1, 2, 3, 4, 5, 6]
 
-    def roll_dice(self):
+    def roll_dice(self, name, computer_flag=0):
         """The dice are random according to how the player rolls it.
         
         Keyword argument: 
         power -- determine how fast or slow the player rolls the dice.
         power in range 1 to 100 and use it as a seed for random.
+        computer_flag: automation handle event for computer.
         """
-        while True:
-            try:
-                print("Fast or slow rolling? ")
-                player_input = int(input("Enter power from 1 to 100: "))
-                if player_input < 1:
-                    print("Roll please!")
-                elif player_input > 100:
-                    print("You use to much power. The dice was broken.")
-                else:
-                    roll_result = self.pseudo_random_dice_roll(player_input)
-                    return roll_result
-            except ValueError:
-                print("Enter number only.")
+        
+        if computer_flag == 1:
+            sleep(1)
+            print("<*> Computer turn: ")
+            power = randint(1, 100)
+            roll_result = self.pseudo_random_dice_roll(power)
+            self.show_deday_roll_dice(name)
+            self.print_dice_side(roll_result)
+            return roll_result
+        else:
+            sleep(1)
+            print(f"<*> {name} turn: ")
+            while True:
+                try:
+                    print(f"<?> Fast or slow rolling, {name}?")
+                    direction_msg = "-> Enter power from 1 to 100"
+                    direction_msg += " (enter sur to surrender):"
+                    player_input = input(direction_msg)
+                    if player_input.lower() == "sur":
+                        return player_input
+                    else:    
+                        player_input = int(player_input)
+                        if player_input < 1:
+                            print("Roll please!")
+                        elif player_input > 100:
+                            print("You use to much power. The dice was broken.")
+                        else:
+                            roll_result = self.pseudo_random_dice_roll(player_input)
+                            self.show_deday_roll_dice(name)
+                            self.print_dice_side(roll_result)
+                            return roll_result
+                except ValueError:
+                    print("Enter number only.")
 
     def pseudo_random_dice_roll(self, power):
         """A formula to get the most random number possible.
@@ -43,44 +64,53 @@ class Dice:
         roll_result = choice(self.sides)
         
         return roll_result
-    
+
+    def show_deday_roll_dice(self, p_name):
+        print(f"\t{p_name} rolling", end='')
+        for i in range(0, 4):
+            if i < 3:
+                print('.', end='')
+                sleep(0.4)
+            else:
+                print()
+
     def print_dice_side(self, side):
-        side_1 =  " ------- \n"
-        side_1 += "|       |\n"
-        side_1 += "|   o   |\n"
-        side_1 += "|       |\n"
-        side_1 += " ------- \n"
+        side_1 =  "\t --------- \n"
+        side_1 += "\t|         |\n"
+        side_1 += "\t|    o    |\n"
+        side_1 += "\t|         |\n"
+        side_1 += "\t --------- \n"
 
-        side_2 =  " ------- \n"
-        side_2 += "| o     |\n"
-        side_2 += "|       |\n"
-        side_2 += "|     o |\n"
-        side_2 += " ------- \n"
+        side_2 =  "\t --------- \n"
+        side_2 += "\t|  o      |\n"
+        side_2 += "\t|         |\n"
+        side_2 += "\t|      o  |\n"
+        side_2 += "\t --------- \n"
 
-        side_3 =  " ------- \n"
-        side_3 += "| o     |\n"
-        side_3 += "|   o   |\n"
-        side_3 += "|     o |\n"
-        side_3 += " ------- \n"
+        side_3 =  "\t --------- \n"
+        side_3 += "\t| o       |\n"
+        side_3 += "\t|    o    |\n"
+        side_3 += "\t|       o |\n"
+        side_3 += "\t --------- \n"
 
-        side_4 =  " ------- \n"
-        side_4 += "| o   o |\n"
-        side_4 += "|       |\n"
-        side_4 += "| o   o |\n"
-        side_4 += " ------- \n"
+        side_4 =  "\t --------- \n"
+        side_4 += "\t|  o   o  |\n"
+        side_4 += "\t|         |\n"
+        side_4 += "\t|  o   o  |\n"
+        side_4 += "\t --------- \n"
 
-        side_5 =  " ------- \n"
-        side_5 += "| o   o |\n"
-        side_5 += "|   o   |\n"
-        side_5 += "| o   o |\n"
-        side_5 += " ------- \n"
+        side_5 =  "\t --------- \n"
+        side_5 += "\t| o     o |\n"
+        side_5 += "\t|    o    |\n"
+        side_5 += "\t| o     o |\n"
+        side_5 += "\t --------- \n"
 
-        side_6 =  " ------- \n"
-        side_6 += "| o   o |\n"
-        side_6 += "| o   o |\n"
-        side_6 += "| o   o |\n"
-        side_6 += " ------- \n"
-        
+        side_6 =  "\t --------- \n"
+        side_6 += "\t|  o   o  |\n"
+        side_6 += "\t|  o   o  |\n"
+        side_6 += "\t|  o   o  |\n"
+        side_6 += "\t --------- \n"
+
         if side == 1:
             print(side_1)
         elif side == 2:
