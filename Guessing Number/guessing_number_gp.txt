@@ -1,0 +1,7 @@
+# ------------------------------ GAMEPLAY ------------------------------#
+|  The computer will choose a number from 1 to 10. And you are trying   | 
+| to guess it (Limit of 3 times). Also, a little hint will be shown if  |
+| the first and second wrong guesses. If all guesses are wrong, you will|
+| lose the game. Otherwise, you win.                                    |
+| Wish you have fun playing the game!                                   |
+# ----------------------------------------------------------------------#

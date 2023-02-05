@@ -1,0 +1,5 @@
+# --------------------------- Gameplay -------------------------#
+|    I will choose a secret number in range 1 to 10.            |
+|    You have 3 chance to guess it.                             |
+|   If your prediction is correct, you win and otherwise I win. |
+# --------------------------------------------------------------#

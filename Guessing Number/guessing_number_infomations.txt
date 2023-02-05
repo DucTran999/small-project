@@ -1,0 +1,51 @@
+                            Guessing Number Game
+
+1. Introduction
+    This game is probably no stranger to anyone. The simple rule is I will pick 
+a number and you try to guess it. For more details, you could read the gameplay
+(guessing_number_gp.txt). Since its logic is clear, I decided to program it as 
+the first game in my project. This project is used to practice and review what I
+have learned from some fundamental online courses.
+
+2. Program Description:
+* Programming paradigm: Procedural programming
+* Modules: os, secrets
+* Program Flow Control:
+Main flow:
+    Greeting and show game_play to player:
+    Invite player to join the game:
+    If player agree:
+        Start new game:
+            1. Computer chose random number.
+            2. Let player guess. (Maximum 3 times)
+                if guess correct 
+                        -> print congratulation message. 
+                        -> game finished
+                if guess not correct 
+                    -> print hint messages.
+            3. if all guess not correct -> print computer win message.
+                                        -> game finished
+    If player disagree:
+        show Goodbye message.
+
+- Functional requirements:
+a) Show gameplay features:
++ Description: load gameplay from a text file and print it to the console.
++ Note: Ensuring that the game does not crash in case some problems occur while 
+loading the gameplay file.
+
+b) Invitation features:
++ Description: Show a message invite players to join the game and confirm their 
+answers.
++ Note: Only inputs y or n are accepted. If they mistype, let them do it again. 
+
+c) Computer chose secret number features:
++ Description: Computer choices a number from 1 to 10.
++ Note: strong random number is required.
+
+d) Guessing and Evalute features:
++ Description: Let the player attempt to guess and check it's correct.
++ Note: Players are only allowed to enter numbers. If the player mistypes, let 
+them re-enter. Also, if they guess correctly on the first try, there is no need 
+to try the second and third times, and the round is over. Corresponding to the 
+case where their prediction is correct on the second attempt.
