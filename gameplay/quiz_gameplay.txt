@@ -1,6 +1,0 @@
-#-----------------------------Welcome to QUIZ game-----------------------------#
-|   Gameplay:                                                                  |
-|I will list some topics and you can pick one of them which make you interested|
-|5 questions relate to it will appear with 3 answers on the console. Your work |
-|is simply to choose one of them, which you are think is the answer.           |
-#------------------------------------------------------------------------------#

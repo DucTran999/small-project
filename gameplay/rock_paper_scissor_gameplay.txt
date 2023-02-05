@@ -1,8 +1,0 @@
-# --------------------------- Gameplay -------------------------#
-| We have three choices include Rock, Paper and Scissor.        |
-| Follow these rules below:                                     |
-|    + Rock win scissor                                         |
-|    + Scissor win paper                                        |
-|    + Paper win rock.                                          |
-| We will play 3 rounds and who win 2 rounds will win the game. | 
-# --------------------------------------------------------------#
