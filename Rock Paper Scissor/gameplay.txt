@@ -1,0 +1,16 @@
+#----------------------- ROCK PAPER SCISSORS -----------------------#
+# ---------------------------- GAMEPLAY ----------------------------#
+| We have three choices Rock, Paper, and Scissors.                  |
+| Follow these rules below:                                         |
+|    + Rock beats scissors                                          |
+|    + Scissors beats paper                                         |
+|    + Paper beats rock.                                            |
+| In other cases will be judged as a tie set.                       |
+| If it is impossible to decide in the first two sets, the final    |
+| result will be evaluated after the third set. Details below:      |
+| A Tie match:                                                      |
+|     * Set 1: win - Set 2: lose - Set 3: tie. (Any order)          |
+|     * All sets are a tie.                                         |
+| All the other cases who win the final set will claim the victory. |
+| Wish you have fun playing the game!                               |
+# ------------------------------------------------------------------#
