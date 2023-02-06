@@ -1,0 +1,23 @@
+[
+    {
+        "question": "What is a correct syntax to output \"Hello World\" in C++?",
+        "A": "Console.WriteLine(\"Hello World!\");",
+        "B": "cout << \"Hello World!\";",
+        "C": "print(\"Hello World!\")",
+        "Answer": "B"
+    },
+    {
+        "question": "How do you insert COMMENTS in C++ code?",
+        "A": "//This is comment",
+        "B": "#This is comment",
+        "C": "/*This is comment",
+        "Answer": "A"
+    },
+    {
+        "question": "Which data type is used to create a variable that should store text?",
+        "A": "String",
+        "B": "myString",
+        "C": "string",
+        "Answer": "C"
+    }
+]
