@@ -1,0 +1,25 @@
+#------------------------ Welcome to Seahorses Race -----------------------#
+|............................... Guideline ................................|
+|   Each player will have 3 seahorses. I And your work is roll the dice    |
+|to move as much as possible hippocames to the finish race.                |
+|To get the finish race the hippocames need to go through 12 steps.        |
+|The race:                                                                 |
+|               _._._._._._._._......_ |Finish                             |
+|               1 2 3 4 5 6 7        12                                    |
+|Hippocames are only ready for the race when you roll the dice with 6.     |
+|So that you will have 2 options which are move current hippo 6 steps or   |
+|let new hippocame come to the start. Think about it carefully to make     |
+|the best decision.                                                        |
+|while hippocampus are racing they will be meet "!" box and "?" box.       |
+|   + "!" box is dangerous box. You can be lost a hippocame, turn, etc.    |
+|   + "?" box is mistery gift. It brings both dangerous things and supprise|
+| gift. I will not discole them. Join the game and you can explore them by |
+|your self.                                                                | 
+|Direction marks:                                                          |
+|<!> warning mark: when an error occured.                                  |
+|<?> direction mark: question or requirement infomations need player input.|
+|-> input mark: where player need to input.                                |
+|<i> infomation mark: simply give infomations of hippocampuses.            |
+|Hope the game will bring you moments of relaxation and fun.               |
+|DucTran                                                                   |
+#--------------------------------------------------------------------------#
