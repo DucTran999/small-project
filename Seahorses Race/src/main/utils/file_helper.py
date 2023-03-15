@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 
 
@@ -8,9 +9,8 @@ class FileHelper:
     - read_text_file
     - read_json_file
     """
-    @classmethod
     def read_text_file(cls, filename: str) -> list[str] or None:
-        filepath = f"Seahorses Race/src/db/{filename}.txt"
+        filepath = f"Seahorses Race/src/main/db/{filename}.txt"
         try:
             with open(filepath, mode='r', encoding='utf-8') as file_obj:
                 content = file_obj.read()
@@ -20,9 +20,8 @@ class FileHelper:
         else:
             return content
     
-    @classmethod
     def read_json_file(cls, filename: str) -> list[dict] or None:
-        filepath = f"Seahorses Race/src/db/{filename}.json"
+        filepath = f"Seahorses Race/src/main/db/{filename}.json"
         try:
             with open(filepath, mode='r', encoding='utf-8') as file_obj:
                 content = json.load(file_obj)
