@@ -52,6 +52,7 @@ class Seahorse:
         new_pos = current_pos + step
         if new_pos > 12:
             self.state = 'Finish'
+            new_pos = 13
         self.position = new_pos
     
     def move_to_start(self) -> None:
