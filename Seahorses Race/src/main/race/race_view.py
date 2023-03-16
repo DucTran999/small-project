@@ -1,6 +1,6 @@
-from box.box import Box
+from main.box.box import Box
 
-from race.race import Race
+from main.race.race import Race
 
 class RaceView:
     """In charge of displaying the race.""" 
@@ -18,6 +18,12 @@ class RaceView:
         print("Finish.")
     
     @classmethod
+    def render_race_lance(cls, boxes: list[Box]) -> None:
+        original_race = ['___'] * 13
+        original_race[0] = ''
+        return cls.distribute_boxes(original_race, boxes)
+    
+    @classmethod
     def display_step_mark(cls):
         print("Mark:  ", end='|')
         for step_mark in range(1, 13):
@@ -26,12 +32,6 @@ class RaceView:
             else:
                 print(f" {step_mark} ", end='')
         print('|')
-    
-    @classmethod
-    def render_race_lance(cls, boxes: list[Box]) -> None:
-        original_race = ['___'] * 13
-        original_race[0] = ''
-        return cls.distribute_boxes(original_race, boxes)
     
     @classmethod
     def distribute_boxes(cls, original_race: list[str], boxes: list[Box]) -> list[str]:

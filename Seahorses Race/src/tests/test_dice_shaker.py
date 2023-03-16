@@ -14,11 +14,15 @@ class DieShakerTests(unittest.TestCase):
     """Testing dice shaker"""
     @patch('time.sleep', return_value=None)
     def test_shake_dice_return_result_from_one_to_six_is_valid(self, patched):
-        dice_shaker = DiceShaker()
+        # Given
+        expected_output_range = [1, 2, 3, 4, 5, 6] 
+        sut = DiceShaker()
         
-        result = dice_shaker.shake_dice()
+        # When
+        actual_output = sut.shake_dice()
 
-        self.assertTrue(1 <= result <= 6)
+        # Then
+        self.assertTrue(actual_output in expected_output_range)
 
 
 if __name__ == '__main__':
