@@ -51,3 +51,4 @@ class Player:
     
     def tracking_turns(self):
         self.__turns_total += 1
+    
