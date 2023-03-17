@@ -10,7 +10,7 @@ class Validation:
     def get_user_option(cls, valid_options: tuple, message: str):
         while True:
             try:
-                user_inp = input(message)
+                user_inp = input(message).strip()
                 cls.user_option_validation(user_inp, valid_options)
             except ValueError as e:
                 print(e)
@@ -18,7 +18,7 @@ class Validation:
                 return user_inp
     
     @classmethod
-    def user_option_validation(cls, user_inp, valid_inp: list):
+    def user_option_validation(cls, valid_inp: list, user_inp: str):
         if user_inp not in valid_inp:
             raise ValueError('Invalid option!')
         else:
@@ -39,7 +39,7 @@ class Validation:
     def user_name_validation(cls, name: str, avoid_name: str):
         if len(name) == 0:
             raise ValueError("<!> Empty name not excepted!")
-        elif len(name) > 30:
+        elif len(name) > 20:
             raise ValueError('<!> Name cannot over 30 chars')
         elif name == avoid_name:
             raise ValueError('<!> Name exist!')
@@ -50,16 +50,16 @@ class Validation:
     def get_seahorse_id(cls, id_list: list[int], message):
         while True:
             try:
-                user_inp = int(input(message))
-                cls.user_option_validation(user_inp, id_list)
-            except ValueError:
-                print('Invalid id')
+                user_inp = input(message).strip()
+                cls.seahorse_id_valid(user_inp, id_list)
+            except ValueError as er:
+                print(er)
             else:
                 return user_inp
     
     @classmethod
-    def seahorse_id_vali(cls, user_inp, valid_inp: list):
-        if user_inp not in valid_inp:
-            raise ValueError('Invalid option!')
+    def seahorse_id_valid(cls, user_inp, valid_inp: list):
+        if int(user_inp) not in valid_inp:
+            raise ValueError('Invalid id')
         else:
             return user_inp

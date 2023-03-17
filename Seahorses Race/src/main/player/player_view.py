@@ -1,6 +1,6 @@
-from player.player import Player
+from main.player.player import Player
 
-from utils.validation import Validation
+from main.utils.validation import Validation
 
 
 class PlayerView:
@@ -13,10 +13,10 @@ class PlayerView:
             print('\t', seahorse)
     
     @classmethod
-    def display_user_input_name(cls, order: int, avoid_name: str='') -> str:
+    def display_user_input_name_form(cls, order: int, avoid_name: str='') -> str:
         print(f"Player {order}: ")
-        return Validation.get_player_name(avoid_name)
+        return Validation.get_player_name(avoid_name, "=> Enter player name: ")
     
     @classmethod
-    def get_seahorse_id_for_action(cls, valid_seahorse_id: list[str]) -> int:
+    def enter_seahorse_id_for_action(cls, valid_seahorse_id: list[str]) -> int:
         return Validation.get_seahorse_id(valid_seahorse_id, "=> Enter seahorse id: ")
