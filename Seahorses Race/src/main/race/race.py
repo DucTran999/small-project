@@ -1,8 +1,8 @@
-from main.box.box import Box
+from box.box import Box
 
 class Race:
     """This class describe a race"""
-    def __init__(self, steps: int, boxes_positions: tuple[int],  boxes: list[Box]):
+    def __init__(self, steps: int, boxes_positions: list[int],  boxes: list[Box]):
         """Race constructor
         
         Params:
@@ -20,7 +20,7 @@ class Race:
         return self.__steps
 
     @property
-    def boxes_positions(self) -> tuple[int]:
+    def boxes_positions(self) -> list[int]:
         return self.__boxes_positions
     
     @property

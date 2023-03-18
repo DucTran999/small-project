@@ -1,6 +1,6 @@
-from main.box.box import Box
+from box.box import Box
 
-from main.race.race import Race
+from race.race import Race
 
 class RaceView:
     """In charge of displaying the race.""" 
