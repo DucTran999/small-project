@@ -1,17 +1,10 @@
-import os
-import sys
 import unittest
+import config_path_for_test
 
 from parameterized import parameterized
 
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
-sys.path.append(parent + '/main')
-
 from main.player.player import Player
 from main.player.player_service import PlayerService
-
 from main.seahorse.seahorse import Seahorse
 
 
@@ -48,8 +41,8 @@ class PlayerServiceTests(unittest.TestCase):
         self.assertEqual(actual_out, expected_out)
     
     @parameterized.expand([
-        (Player('William', [], 1, 0), 'more roll', 1, 2),
-        (Player('William', [], 1, 0), 'lost turn', -1, 0)
+        (Player('William', [], "manual", 1, 0), 'more roll', 1, 2),
+        (Player('William', [], "manual", 1, 0), 'lost turn', -1, 0)
     ])
     def test_update_player_info_when_get_box_event(self, fake_player: Player,
                                                    event_name: str,

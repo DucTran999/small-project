@@ -1,12 +1,7 @@
-import os
-import sys
 import unittest
-from parameterized import parameterized
+import config_path_for_test
 
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
-sys.path.append(parent + '/main')
+from parameterized import parameterized
 
 from main.seahorse.seahorse import Seahorse
 

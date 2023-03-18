@@ -1,12 +1,5 @@
-import os
-import sys
-
 import unittest
-
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
-sys.path.append(parent + '/main')
+import config_path_for_test
 
 from main.box.box import Box
 

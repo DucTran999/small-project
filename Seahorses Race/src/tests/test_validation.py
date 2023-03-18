@@ -1,11 +1,7 @@
-import os
-import sys
 import unittest
-from parameterized import parameterized
+import config_path_for_test
 
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
+from parameterized import parameterized
 
 from main.utils.validation import Validation
 
@@ -19,7 +15,7 @@ class ValidationTests(unittest.TestCase):
                                                       user_inp: str,
                                                       expected_output: str):
         # When
-        actual_output = Validation.user_option_validation(valid_options, user_inp)
+        actual_output = Validation.user_option_validation(user_inp, valid_options)
         
         # Then
         self.assertEqual(actual_output, expected_output)
@@ -34,7 +30,7 @@ class ValidationTests(unittest.TestCase):
                                                                valid_options: list,
                                                                user_inp: str):
         with self.assertRaises(ValueError):
-            Validation.user_option_validation(valid_options, user_inp)
+            Validation.user_option_validation(user_inp, valid_options)
 
 
     def test_can_get_player_name_entered_if_it_is_valid(self):

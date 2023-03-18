@@ -1,11 +1,6 @@
-import os
-import sys
 import unittest
 from unittest.mock import patch
-
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
+import config_path_for_test
 
 from main.dice.dice_shaker import DiceShaker
 
