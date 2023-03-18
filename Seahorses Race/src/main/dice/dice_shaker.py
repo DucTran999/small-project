@@ -1,7 +1,7 @@
 import secrets
 
-from main.dice.dice import Dice
-from main.utils.function_helper import FunctionHelper
+from dice.dice import Dice
+from utils.function_helper import FunctionHelper
 
 class DiceShaker:
     """This class represent a dice shaker in a match."""

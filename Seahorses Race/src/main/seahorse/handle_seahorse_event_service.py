@@ -5,14 +5,14 @@ from main.seahorse.seahorse import Seahorse
 class HandleSeahorseEventService(IHandleSeahorseEventService):
     """Manipulate seahorse objects info when they get event"""
     def is_seahorse_get_box(self, seahorse_pos: int,
-                            boxes_positions: list[int]) -> bool:
+                            boxes_positions: tuple[int]) -> bool:
         return True if seahorse_pos in boxes_positions else False
     
     def is_box_event_apply_to_seahorse(self, box_event_name: str) -> bool:
         events = ('move to finish', 'move faster', 'get trouble')
         return True if box_event_name in events else False
    
-    def handle_seahorse_get_box_event(self, seahorse: Seahorse, 
+    def update_seahorse_info_get_box_event(self, seahorse: Seahorse, 
                                       event_name: str, 
                                       event_value: int):
         if event_name == 'get trouble':
@@ -24,13 +24,13 @@ class HandleSeahorseEventService(IHandleSeahorseEventService):
             seahorse.state = event_value
             seahorse.position = 13
     
-    def handle_seahorse_get_face_6_event(self, seahorse: Seahorse,
+    def update_seahorse_info_get_face_6_event(self, seahorse: Seahorse,
                                          die_face: int) -> None:
         if seahorse.state == 'Warm up':
             seahorse.move_to_start()
         else:
             seahorse.move(die_face)
 
-    def handle_seahorse_get_not_face_6_event(self, seahorse: Seahorse,
+    def update_seahorse_info_get_not_face_6_event(self, seahorse: Seahorse,
                                              die_face: int) -> None:
         seahorse.move(die_face)
