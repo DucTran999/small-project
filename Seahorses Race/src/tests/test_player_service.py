@@ -49,7 +49,7 @@ class PlayerServiceTests(unittest.TestCase):
                                                    event_value: int or str,
                                                    expected_turn_remain: int):
         # When
-        self.sut.handle_player_get_box_event(fake_player, event_name, event_value)
+        self.sut.update_player_info_get_box_event(fake_player, event_name, event_value)
         
         # Then
         self.assertEqual(fake_player.turn_remain, expected_turn_remain)
