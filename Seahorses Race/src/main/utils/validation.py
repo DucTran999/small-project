@@ -18,17 +18,17 @@ class Validation:
                 return user_inp
     
     @classmethod
-    def user_option_validation(cls, valid_inp: list, user_inp: str):
-        if user_inp not in valid_inp:
-            raise ValueError('Invalid option!')
-        else:
+    def user_option_validation(cls, user_inp: str, valid_inp: list):
+        if user_inp in valid_inp:
             return user_inp
+        else:
+            raise ValueError('Invalid option!')
     
     @classmethod
-    def get_player_name(cls, avoid_name: str):
+    def get_player_name(cls, avoid_name: str, message: str):
         while True:
             try:
-                user_inp = input("=> Enter player name: ").strip()
+                user_inp = input(message).strip()
                 cls.user_name_validation(user_inp, avoid_name)
             except ValueError as e:
                 print(e)
@@ -51,15 +51,15 @@ class Validation:
         while True:
             try:
                 user_inp = input(message).strip()
-                cls.seahorse_id_valid(user_inp, id_list)
-            except ValueError as er:
-                print(er)
-            else:
-                return user_inp
+                return cls.seahorse_id_valid(user_inp, id_list)
+            except ValueError as err_message:
+                print(err_message)
     
     @classmethod
-    def seahorse_id_valid(cls, user_inp, valid_inp: list):
-        if int(user_inp) not in valid_inp:
-            raise ValueError('Invalid id')
+    def seahorse_id_valid(cls, user_inp: str, valid_inp: list):
+        if len(user_inp) == 0:
+            raise ValueError("Empty is invalid.")
+        elif int(user_inp) not in valid_inp:
+            raise ValueError("Invalid id")
         else:
-            return user_inp
+            return int(user_inp)

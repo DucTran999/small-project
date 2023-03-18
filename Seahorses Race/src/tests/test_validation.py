@@ -58,22 +58,22 @@ class ValidationTests(unittest.TestCase):
     
     def test_can_get_seahorse_id_if_it_valid(self):
         # Given
-        input_id = 1
+        input_id = '1'
         valid_inp = (1, 3, 4)
-        expected_output = input_id
+        expected_output = 1
         
         # When
-        actual_output =Validation.seahorse_id_valid(input_id, valid_inp)
+        actual_output = Validation.seahorse_id_valid(input_id, valid_inp)
         
         # Then
         self.assertEqual(actual_output, expected_output)
         
     @parameterized.expand([
-        ((1, 2, 3), 'a'),   # case 1: character input
-        ((1, 2 ,3), 4)      # case 2: id not exist 
+        ((1, 2, 3), 'a'),     # case 1: character input
+        ((1, 2 ,3), '4')      # case 2: id not exist 
     ])
     def test_cannot_get_seahorse_id_if_it_invalid(self, valid_id: tuple[int],
-                                                  player_input: str or int):
+                                                  player_input: str):
         with self.assertRaises(ValueError):
             Validation.seahorse_id_valid(player_input, valid_id)
         
