@@ -1,6 +1,6 @@
-from main.player.player import Player
+from player.player import Player
 
-from main.utils.validation import Validation
+from utils.validation import Validation
 
 
 class PlayerView:

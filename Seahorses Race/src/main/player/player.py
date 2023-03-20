@@ -7,7 +7,8 @@ class Player:
                  seahorses: list[Seahorse],
                  player_type: str,
                  turn_remain: int = 1,
-                 turns_total: int = 0
+                 turns_total: int = 0,
+                 player_state: str = "not done"
                  ) -> None:
         """Player constructor
         
@@ -19,12 +20,15 @@ class Player:
         event.
         - turn_total: total turn players used for moving all seahorses to finish.
         player.
+        - state: set to 'done' if player don't have any seahorse is available for
+        race.
         """
         self.__name = name
         self.__seahorses = seahorses
         self.__player_type = player_type
         self.__turn_remain = turn_remain
         self.__turns_total = turns_total
+        self.__state = player_state
     
     def __repr__(self) -> str:
         return f"Player: {self.name}"
@@ -63,4 +67,12 @@ class Player:
     
     def tracking_turns(self):
         self.__turns_total += 1
+    
+    @property
+    def state(self):
+        return self.__state
+    
+    @state.setter
+    def state(self, new_state: str):
+        self.state = new_state
     

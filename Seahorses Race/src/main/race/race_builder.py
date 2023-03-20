@@ -1,10 +1,10 @@
 import random
 import secrets
 
-from main.race.race import Race
+from race.race import Race
 
-from main.box.box import Box
-from main.box.box_builder import BoxBuilder
+from box.box import Box
+from box.box_builder import BoxBuilder
 
 
 class RaceBuilder:

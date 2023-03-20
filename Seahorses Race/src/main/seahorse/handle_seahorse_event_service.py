@@ -1,11 +1,11 @@
-from main.seahorse.i_handle_seahorse_event_service import IHandleSeahorseEventService
-from main.seahorse.seahorse import Seahorse
+from seahorse.i_handle_seahorse_event_service import IHandleSeahorseEventService
+from seahorse.seahorse import Seahorse
 
 
 class HandleSeahorseEventService(IHandleSeahorseEventService):
     """Manipulate seahorse objects info when they get event"""
     def is_seahorse_get_box(self, seahorse_pos: int,
-                            boxes_positions: tuple[int]) -> bool:
+                            boxes_positions: list[int]) -> bool:
         return True if seahorse_pos in boxes_positions else False
     
     def is_box_event_apply_to_seahorse(self, box_event_name: str) -> bool:

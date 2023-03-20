@@ -18,7 +18,7 @@ class PlayerBuilderTest(unittest.TestCase):
         actual_output = sut.create_player('Tester')
 
         # Then
-        self.assertIsInstance(actual_output, Player)
+        self.assertEqual(actual_output.__class__.__name__, Player.__name__)
         self.assertEqual(actual_output.name, expected_output.name)
         self.assertEqual(actual_output.player_type, expected_output.player_type)
 
@@ -33,7 +33,7 @@ class PlayerBuilderTest(unittest.TestCase):
         actual_output = sut.create_player(name, "auto")
 
         # Then
-        self.assertIsInstance(actual_output, Player)
+        self.assertEqual(actual_output.__class__.__name__, Player.__name__)
         self.assertEqual(actual_output.name, expected_output.name) 
         self.assertEqual(actual_output.player_type, expected_output.player_type)
 

@@ -21,10 +21,15 @@ class BoxTests(unittest.TestCase):
         sut = BoxBuilder()
         
         # When
-        actual_output = sut.create_box(position, event) 
+        actual_output: Box = sut.create_box(position, event) 
         
         # Then
-        self.assertEqual(actual_output, expected_output)
-
+        self.assertEqual(actual_output.position, expected_output.position)
+        self.assertEqual(actual_output.description, expected_output.description)
+        self.assertEqual(actual_output.event_name, expected_output.event_name)
+        self.assertEqual(actual_output.event_type, expected_output.event_type)
+        self.assertEqual(actual_output.event_value, expected_output.event_value)
+         
+         
 if __name__ == '__main__':
     unittest.main()

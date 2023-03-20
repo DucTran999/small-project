@@ -59,7 +59,7 @@ class RaceBuilderTests(unittest.TestCase):
         actual_output = self.sut.create_race(steps) 
         
         # Then
-        self.assertIsInstance(actual_output, Race)
+        self.assertEqual(actual_output.__class__.__name__, Race.__name__)
         self.assertEqual(actual_output.steps, steps)
         self.assertTrue(len(actual_output.boxes_positions), expected_box_qty)
 

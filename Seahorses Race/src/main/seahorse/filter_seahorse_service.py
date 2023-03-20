@@ -1,5 +1,5 @@
-from main.seahorse.i_filter_seahorse_service import IFilterSeahorseService
-from main.seahorse.seahorse import Seahorse
+from seahorse.i_filter_seahorse_service import IFilterSeahorseService
+from seahorse.seahorse import Seahorse
 
 
 class FilterSeahorseService(IFilterSeahorseService):

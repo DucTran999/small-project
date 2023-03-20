@@ -1,5 +1,5 @@
-from main.player.player import Player
-from main.seahorse.filter_seahorse_service import FilterSeahorseService
+from player.player import Player
+from seahorse.filter_seahorse_service import FilterSeahorseService
 
 
 class PlayerService:

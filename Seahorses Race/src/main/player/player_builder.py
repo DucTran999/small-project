@@ -1,5 +1,5 @@
-from main.player.player import Player
-from main.seahorse.seahorse import Seahorse
+from player.player import Player
+from seahorse.seahorse import Seahorse
 
 
 class PlayerBuilder:

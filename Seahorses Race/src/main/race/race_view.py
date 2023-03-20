@@ -37,7 +37,7 @@ class RaceView:
     def distribute_boxes(cls, original_race: list[str], boxes: list[Box]) -> list[str]:
         for box in boxes:
             box_pos = box.position
-            box_type = box.box_type
+            box_type = box.event_type
             if box_type == 'mystery':
                 original_race[box_pos] = '_?_'
             else:

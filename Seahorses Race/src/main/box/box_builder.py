@@ -1,8 +1,8 @@
 import secrets
 
-from main.box.box import Box
+from box.box import Box
 
-from main.utils.file_helper import FileHelper
+from utils.file_helper import FileHelper
 
 
 class BoxBuilder:

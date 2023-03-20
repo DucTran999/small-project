@@ -4,6 +4,7 @@ from match.match_controller import MatchController
 
 from utils.function_helper import FunctionHelper
 
+
 class GameController:
     """Interacting with user by GameView and fulfill their request."""
     is_running = True
@@ -44,10 +45,10 @@ class GameController:
             self.handle_back_option()
 
     def handle_single_player_option(self):
-        self.match_c.start_single_player_match()
+        self.match_c.start_single_mode_match()
     
     def handle_two_player_option(self):
-        self.match_c.start_two_player_match()
+        self.match_c.start_single_mode_match()
     
     def handle_back_option(self) -> None:
         self.is_running = False

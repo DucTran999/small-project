@@ -3,11 +3,11 @@ import time
 
 class FunctionHelper:
     """This class in charge of processing small task."""
-    @classmethod
-    def clear_screen(cls):
+    @staticmethod
+    def clear_screen():
         os.system('cls')
     
-    @classmethod
-    def delay_with_announcement(cls, announcement: str, time_delay: int):
+    @staticmethod
+    def delay_with_announcement(announcement: str, time_delay: int):
         print(announcement, "...")
         time.sleep(time_delay)
