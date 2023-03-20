@@ -1,0 +1,26 @@
+                            Seahorse Race
+
+I. Introduction:
+    This game is a simpler version of seahorse chess. The maximum number of 
+players is two and the seahorse is six for both. In the current version, seahorses
+will not kick others in the event of a collision. Because just rolling the dice 
+and the seahorse moving will make the game boring. To make it more interesting, 
+I will add a new feature to our game called the item box. Boxes will be randomly
+distributed and their items and events will greatly affect the outcome of the 
+match.
+
+II. Program description:
+1. Overview:
+- This game doesn't have much behavior manipulation with data like the quiz game.
+I just learned about the unit test and want to use this game to practice. After 
+first refactoring this game, I realize that writing tests before coding makes me
+find it easier to design the program.The total time to develop this game compared
+to the quiz game is much shorter.
+
+2. Programming paradigm: Object oriented programming.
+
+3. Standard modules: os, sys, time, secrets, random, unittest.
+
+4. Package structural:
+- main: contains game source code.
+- tests: contains all unittest.
