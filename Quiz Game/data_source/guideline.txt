@@ -1,0 +1,9 @@
+#------------------- WELCOME TO QUIZ GAME -------------------#
+|   Guideline:                                               |
+|I will list some topics, and you can pick one that interests|
+|you. 5 questions related to it will appear with 3 answers on|
+|the console and your work is to find the correct answer.    |
+|Moreover, you can create your topics and use them to review |
+|knowledge related to any field you like.                    |
+|Wish you happy gaming.                                      |
+#------------------------------------------------------------#

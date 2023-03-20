@@ -1,0 +1,56 @@
+                                    QUIZ GAME
+I. Introduction:
+    Quiz game is a popular games all over the world. It often appears in schools
+as a test. After each lesson, the core will be emphasized and easy to remember 
+through a quiz game. In studying, I often use quiz games to review new lessons.
+I decided to program this game, which is the third game in the game box because
+it is complex enough to think about organizing code and storing data. This game 
+is a suitable choice for me to improve them.
+
+II. Program description:
+1. Programming paradigm: Object oriented programming.
+
+2. Standard modules: os, random.
+
+3. Functional requirements:
+- Show guideline.
+- Manage Topic: 
++ Add, edit, delete topic.
++ Add, edit, delete quiz.
+- Quizzing: Create test and grading.
+- Reviewing: show topic's quizzes with answer.
+
+4. Data storage: txt and JSON file.
+
+5. Software Architecture Patterns: MVC
++ Model: Manage data, logic and rule.
++ View: handle information presentation.
++ Controller: Accepts input and converts it to commands for the model or view.
+
+Architecture overview:
+
+     View                       Controller                  Model
+      |                             |                         |
+    HomeView                 HomeController             HomeTopicModel
+    GameView                 GameController             GameTopicModel
+    ManagementView           ManagementView             ManagementModel
+    EditTopicView            EditTopicController        EditTopicModel
+    TopicView                                           Topic
+    QuizView                                            Quiz
+    PreventInvalidInput
+
+    In my implementation, the user's input will be validated in the View to make
+the controller thinner. The controller is only responsible for giving commands to
+view and the model corresponds to the user input that was validated.
+
+III. Features scalable.
+- Quizzing:
+ Current Version: All quizzes must have 3 choices and one of them is the correct 
+answer.
+ Upgrade: The choice quantity can be more than 3 and at least 2 depending on the
+question type.
+
+- Delete quiz:
+ Current version: Only one quiz delete at a time.
+ Upgrade: new features for clearing all quizzes at a time and recovering quizzes
+in case the user has a mistake.

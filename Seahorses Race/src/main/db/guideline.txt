@@ -1,0 +1,18 @@
+#------------------------ Welcome to Seahorses Race -----------------------#
+|............................... Guideline ................................|
+|   Each player will have 3 seahorses and your work is to help them finish |
+|the race as much as possible. You have to roll dice to move them.         |
+|   Each seahorse has to run over 12 steps to get the finish.              |
+|   Race simulation:                                                       |
+|        Start:  ___ _?_ ___ ___ _?_ ___ ___ _?_ ___ ___ ___ _?_ Finish.   |
+|        Mark:  | 1   2   3   4   5   6   7   8   9   10  11  12 |         |
+|       ------------------------------------------------------------       |
+|   Seahorses are only ready for the race when you roll the dice with 6.   |
+|So that you will have 2 options which are move current seahorse 6 steps or|
+|let the new come to the start. Think about it carefully to make the best  |
+| decision. While seahorse are racing they will be get "!" box and "?" box.|
+|+ "!" box is dangerous box. You can be lost a seahorse, turn, etc.        |
+|+ "?" box is mystery gift that brings surprise items. Join the game and   |
+|explore them by your self.                                                |
+|Hope the game will bring you moments of relaxation and fun.               |
+#--------------------------------------------------------------------------#
